@@ -41,10 +41,13 @@ jobs:
           echo "Evento: $GITHUB_ACTOR"
           echo "Evento: $GITHUB_REPOSITORY"
 
-      - name: "Mostrar variables por defecto"
+      - name: "Mostrar secretos"
         run: |
           echo "usename: ${{ env.usename}}"
-          echo "password: ${{ secrets.PASSWORD}}"
+          if: ${{ env.usename == 'pmendozz'}}
+          echo "el usuario es correcto"
+          if: ${{ secrets.PASSWORD == 'lima123'}}
+          echo "la contraseña es correcta"
 
 
       
