@@ -27,7 +27,7 @@ jobs:
         run: echo "Hola mundo"
 
       - name: "Listar variables de entorno"
-        if: ${{ env.platform == 'linux' }}
+        if: ${{ env.platform == 'aws' }}
         run: |
           echo "esto es el valor de platform: ${{ env.platform }}"
           echo "esto es el valor de region: ${{ env.region }}"
