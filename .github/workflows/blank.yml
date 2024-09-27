@@ -22,6 +22,8 @@ jobs:
       region: us-east-1
       account: 123akasmdka
 
+      usename: ${{ secrets.PASSWORD }}
+
     steps:
       - name: "Monstrar mensaje"
         run: echo "Hola mundo"
@@ -38,6 +40,11 @@ jobs:
           echo "Evento: ${{ toJSON(github.event)}}"
           echo "Evento: $GITHUB_ACTOR"
           echo "Evento: $GITHUB_REPOSITORY"
+
+      - name: "Mostrar variables por defecto"
+        run: |
+          echo "usename: ${{ env.usename}}"
+          echo "password: ${{ secrets.PASSWORD}}"
 
 
       
