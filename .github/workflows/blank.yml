@@ -44,7 +44,7 @@ jobs:
       - name: "Mostrar secretos"
         run: |
           echo "usename: ${{ env.usename}}"
-          if: ${{ env.usename == 'pmendozz'}}
+          if: ${{ env.usename == 'pmendozaz'}}
           echo "el usuario es correcto"
           if: ${{ secrets.PASSWORD == 'lima123'}}
           echo "la contraseña es correcta"
