@@ -22,7 +22,8 @@ jobs:
       region: us-east-1
       account: 123akasmdka
 
-      usename: ${{ secrets.PASSWORD }}
+      usename: ${{ secrets.USERNAME }}
+      password: ${{ secrets.PASSWORD }}
 
     steps:
       - name: "Monstrar mensaje"
@@ -44,9 +45,11 @@ jobs:
       - name: "Mostrar secretos"
         run: |
           echo "usename: ${{ env.usename}}"
+          echo "password: ${{ env.password}}"
+          echo "*********"
           if: ${{ env.usename == 'pmendozaz'}}
           echo "el usuario es correcto"
-          if: ${{ secrets.PASSWORD == 'lima123'}}
+          if: ${{ env.password == 'lima123'}}
           echo "la contraseña es correcta"
 
 
